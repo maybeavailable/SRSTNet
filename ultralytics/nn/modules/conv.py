@@ -353,7 +353,7 @@ class LFC(nn.Module):
         # AKConv for the other half of channels
         self.num_param = num_param
         self.stride = s
-        self.p_conv = nn.Conv2d(self.dim_untouched, 2 * num_param,  kernel_size=(num_param, 1), stride=(num_param, 1), stride=s)
+        self.p_conv = nn.Conv2d(self.dim_untouched, 2 * num_param,  kernel_size=1,stride=s)
         self.conv = nn.Sequential(
             nn.Conv2d(self.dim_untouched, self.dim_untouched, kernel_size=(num_param, 1), stride=(num_param, 1), bias=False),
             nn.BatchNorm2d(self.dim_untouched),
